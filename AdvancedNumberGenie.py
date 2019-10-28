@@ -7,7 +7,7 @@
 
 from random import randint
 
-class NumberGenie:
+class AdvancedNumberGenie:
     def __init__(self,low,high,goes):
         self.secret = randint(low,high)
         self.low = low
@@ -39,9 +39,11 @@ class NumberGenie:
             print(self.failure_message," It was ",self.secret)
 
 
-ng = NumberGenie(1,100,7)
-ng.prompt()
-ng.play()
+# Test the class
+if __name__ == '__main__':
+    ng = AdvancedNumberGenie(1,100,7)
+    ng.prompt()
+    ng.play()
 
     
     

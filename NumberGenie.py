@@ -35,9 +35,11 @@ class NumberGenie:
             print(self.failure_message)
 
 
-ng = NumberGenie()
-ng.prompt()
-ng.play()
+# Test the class
+if __name__ == '__main__':
+    ng = NumberGenie()
+    ng.prompt()
+    ng.play()
 
     
     
