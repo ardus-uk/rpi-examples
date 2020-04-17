@@ -1,8 +1,13 @@
 #!/usr/bin/python3
 print("Don't try to be clever...I'm only going to accept positive whole numbers...")
-a=int(input('length of stick #1: '))
-b=int(input('length of stick #2: '))
-c=int(input('length of stick #3: '))
+try:
+    a=int(input('length of stick #1: '))
+    b=int(input('length of stick #2: '))
+    c=int(input('length of stick #3: '))
+except ValueError:
+    print("You're a very naughty boy. Stop it!")
+    exit(0)
+
 if a >= b:
     longest = a
     shortest = b
