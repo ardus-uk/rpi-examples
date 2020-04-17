@@ -2,23 +2,19 @@
 
 # Guess The Number
 # Peter Normington 2019-10-06
-# Mark Bradley 2019-10-07
-# Modified to allow passing of parameters to set number range and guesses
 
 from random import randint
 
 class NumberGenie:
-    def __init__(self,low,high,goes):
-        self.secret = randint(low,high)
-        self.low = low
-        self.high = high
-        self.max_guesses = goes
+    def __init__(self):
+        self.secret = randint(0,9)
+        self.max_guesses = 5
         self.success_message = "Well done!"
         self.failure_message = "Hard luck!"
 
     def prompt(self):
         print("I'm open for business...")
-        print("I'm thinking of a number in the range ",self.low," to ",self.high,"...")
+        print("I'm thinking of a number in the range 0 to 9...")
 
     def play(self):
         guess_count = 0
@@ -36,12 +32,14 @@ class NumberGenie:
         if success:
             print(self.success_message)
         else:
-            print(self.failure_message," It was ",self.secret)
+            print(self.failure_message)
 
 
-ng = NumberGenie(1,100,7)
-ng.prompt()
-ng.play()
+# Test the class
+if __name__ == '__main__':
+    ng = NumberGenie()
+    ng.prompt()
+    ng.play()
 
     
     
