@@ -46,8 +46,6 @@ class FruitBowl:
         else:
             print("There aren't any " + fruit + "s in the bowl!")
 
-
-    
     def show_contents(self):
         if self.bowl:
             print("The contents of the fruit bowl are:")
@@ -57,26 +55,4 @@ class FruitBowl:
         else:
             print("Nothing in the bowl!")
 
-# Test the class
-if __name__ == '__main__':
-    fb = FruitBowl()
-    fb.show_contents()
-    fb.add_single("orange")
-    fb.show_contents()
-    fb.add_single("banana")
-    fb.show_contents()
-    fb.add_multiple("lemon",4)
-    fb.show_contents()
-    fb.add_multiple("grape", 300)
-    fb.show_contents()
-    fb.take_item("lemon")
-    fb.show_contents()
-    fb.take_item("orange")
-    fb.show_contents()
-    fb.take_item("orange")
-    fb.show_contents()
-    fb.add_single("python")
-    fb.show_contents()
-    fb.add_single("python")
-    fb.show_contents()
-   
+  
