@@ -11,7 +11,7 @@ fb.add_single("orange")
 sleep(2)
 fb.show_contents()
 sleep(2)
-fb.add_single("banana")#
+fb.add_single("banana")
 sleep(2)
 fb.show_contents()
 sleep(2)
