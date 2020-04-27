@@ -7,8 +7,8 @@
     Cantaloupe
     Cherries
     Cranberries
-    Dates
-    Figs
+    Date
+    Fig
     Gooseberries
     Grapefruit
     Grapes
