@@ -1,24 +1,33 @@
 #!/usr/bin/python3
 
-filename = "/home/peter/Downloads/alice29.txt"
+def printheading(heading):
+    print(heading)
+    print("-" * len(heading))
+
+filename = "./alice29.txt"
 
 with open(filename,'r') as reader:
-    # Further file processing goes here
-    a = reader.read()
+    wholetext = reader.read()
     
-print(len(a))
-words = a.split()
-print(len(words))
+printheading("Analysing Alice")
+    
+print("Number of characters =",len(wholetext))
+words = wholetext.split()
+print("Number of 'words' =",len(words))
+interestingword = "Alice"
 count = 0
 for word in words:
-    if word == "Alice": count += 1
+    if word == interestingword: count += 1
 
-print(count)
+print("Number of occurrences of the word '"+interestingword+"' =",count)
+print("\n" * 2)
 
 # Return the characters space, tab, linefeed, return, formfeed, and vertical tab.
 import string
-import unicodedata
 ws = string.whitespace
+printheading("Whitespace in Python")
 for char in ws:
-    print(char.encode("utf-8"))
-
+    decimal =  ord(char)
+    print(char.encode("utf-8"), end = "\t")
+    print(str(decimal), end = "\t")    
+    print(hex(decimal))
