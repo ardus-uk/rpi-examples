@@ -23,9 +23,9 @@ interesting_words_count = 0
 for word in words:
     if word in interesting_words: interesting_words_count += 1
 
-print(f'Number of occurrences of the words in the list {interesting_words} = {interesting_words_count}')
-print("\n" * 2)
-
+print('Number of occurrences of the words in the list {} = {}'.format(interesting_words, interesting_words_count))
+print("\n")
+'''
 # Return the characters space, tab, linefeed, return, formfeed, and vertical tab.
 import string
 ws = string.whitespace
@@ -36,3 +36,4 @@ for char in ws:
     print(char.encode("utf-8"), end = "\t")
     print(str(decimal), end = "\t")    
     print(hex(decimal))
+'''
