@@ -12,9 +12,9 @@ with open(filename,'r') as reader:
     
 print_heading("Analysing Alice")
     
-print('Number of characters = %s' % (len(whole_text)))
+print('Number of characters = {}'.format(len(whole_text)))
 words = whole_text.split()
-print('Number of \'words\' = %s' % (len(words)))
+print('Number of \'words\' = {}'.format(len(words)))
 interesting_words = [
     'Alice',
     'cat',
