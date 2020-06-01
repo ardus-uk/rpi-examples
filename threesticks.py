@@ -8,6 +8,7 @@ except ValueError:
     print("You're a very naughty boy. Stop it!")
     exit(0)
 
+    
 if a >= b:
     longest = a
     shortest = b
@@ -45,4 +46,7 @@ if (ordered_list_of_sticks[2] < (ordered_list_of_sticks[1]+ordered_list_of_stick
     print("you have a triangle")
 else:
     print("no triangle possible")
+
+
+
     
