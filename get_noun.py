@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 
-#import random
-
 in_filename = "./nouns.txt"
 with open(in_filename,'r') as reader:
     whole_text = reader.read()
