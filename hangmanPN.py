@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+import random
+
 def spaced_string(char_list):
     return " ".join(char_list)
 
@@ -9,42 +11,55 @@ def players_char(prompt_string):
         character = input(message)
         if (len(character)!=1):
             message = "One letter only, please.\n" + prompt_string
-        elif ((ord(character) not in range(65,90)) and (ord(character) not in range(97,122))):
+        elif ((ord(character) not in range(65,91)) and (ord(character) not in range(97,123))):
             message = "Ony alphabetic characters, please.\n" + prompt_string
         else:
             message = ""
     return character.upper()
-
-target_word = "calumny".upper()
-print(target_word)
-wsf = '_'* len(target_word)
-list_wsf = list(wsf)
-print(list_wsf)
-letters_not_in = []
-print(letters_not_in)
-msg = ["","Had it already","Sorry, not in","Well done","You won","You lost"]
+    
+def word_from_wordlist(filename):
+	with open(filename,'r') as reader:
+		whole_text = reader.read()
+	words_list = whole_text.split()
+	index  = random.randint(0, len(words_list)-1)
+	return words_list[index].upper()
+	
+# Specify the various responses
+msg = ["Had it already","Sorry, not in","Well done","You won!","You lost!"]
+# Number of wrong guesses allowed
+MAX_WRONG_GUESSES = 12
+	
+# THE GAME STARTS HERE
+# Get a word
+target_word = word_from_wordlist("nouns.txt")
+# Prepare the list to keep track of the guessed letters in the word so far ("wsf")
+row_of_dashes = '_' *  len(target_word)
+wsf = list(row_of_dashes)
+# List of letters not in the target word
+fails = []
 
 msg_number = 0;
-while (msg_number < 4):
-    print(spaced_string(list_wsf))
+while (msg_number < 3):
+    print(spaced_string(wsf))
     ch = players_char("Your choice of letter?: ")
-    if ch in letters_not_in:
-        msg_number = 1
+    if ((ch in fails) or (ch in wsf)):
+        msg_number = 0
     elif ch not in target_word:
-        letters_not_in.append(ch)
-        if (len(letters_not_in) < 12):
-            msg_number = 2
+        fails.append(ch)
+        if (len(fails) < MAX_WRONG_GUESSES):
+            msg_number = 1
         else:
-            msg_number = 5
+            msg_number = 4
     else:
         for index in range (0,len(target_word)):
             if target_word[index]==ch:
-                list_wsf[index]=ch
-        msg_number = 3
-        if ("".join(list_wsf)==target_word):
-            msg_number = 4
-          
+                wsf[index]=ch
+        msg_number = 2
+        if ("".join(wsf)==target_word):
+            msg_number = 3
     print(msg[msg_number])
+print("The word was", target_word)
 print("END OF GAME")
+
                 
     
