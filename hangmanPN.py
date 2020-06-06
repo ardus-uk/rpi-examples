@@ -9,7 +9,7 @@ def players_char(prompt_string):
         if (len(character)!=1):
             message = "One letter only, please.\n" + prompt_string
         elif ((ord(character) not in range(65,91)) and (ord(character) not in range(97,123))):
-                message = "Ony alphabetic characters, please.\n" + prompt_string
+                message = "Only alphabetic characters, please.\n" + prompt_string
         else:
             message = ""
     return character.upper()
