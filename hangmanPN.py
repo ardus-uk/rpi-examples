@@ -39,15 +39,13 @@ msg_number = 0
 while (msg_number < 3):
     print(" ".join(wsf))
     ch = players_char("Your choice of letter?: ")
-    if ((ch in fails) or (ch in wsf)):
-        msg_number = 0
+    if ((ch in fails) or (ch in wsf)): msg_number = 0
     elif ch not in target_word:
         fails.append(ch)
         msg_number = 1 if (len(fails) < MAX_WRONG_GUESSES) else 4
     else:
         for index in range (0,len(target_word)):
-            if target_word[index]==ch:
-                wsf[index]=ch
+            if target_word[index]==ch: wsf[index]=ch
         msg_number = 2 if ("".join(wsf)!=target_word) else 3
     print(msg[msg_number])
 print("The word was", target_word)
