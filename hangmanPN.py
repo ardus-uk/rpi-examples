@@ -31,7 +31,7 @@ MAX_WRONG_GUESSES = 12
 	
 # THE GAME STARTS HERE
 # Get a word
-target_word = word_from_wordlist("nouns.txt")
+target_word = word_from_wordlist("longwords.txt")
 # Prepare the list to keep track of the guessed letters in the word so far ("wsf")
 row_of_dashes = '_' *  len(target_word)
 wsf = list(row_of_dashes)
