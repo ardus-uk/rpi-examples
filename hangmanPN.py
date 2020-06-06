@@ -26,8 +26,7 @@ MAX_WRONG_GUESSES = 12
 # Get a word
 target_word = word_from_wordlist("longwords.txt")
 # Prepare the list to keep track of the guessed letters in the word so far ("wsf")
-row_of_dashes = '_' *  len(target_word)
-wsf = list(row_of_dashes)
+wsf = list('_' * len(target_word))
 # List of letters not in the target word
 fails = [] # type: list
 
@@ -35,8 +34,7 @@ msg_number = 0
 while (msg_number < 3):
     print(" ".join(wsf))
     ch = players_char("Your choice of letter?: ")
-    if ((ch in fails) or (ch in wsf)):
-        msg_number = 0
+    if ((ch in fails) or (ch in wsf)): msg_number = 0
     elif ch not in target_word:
         fails.append(ch)
         msg_number = 1 if (len(fails) < MAX_WRONG_GUESSES) else 4
