@@ -9,23 +9,23 @@ def players_char(prompt_string):
         if (len(character)!=1):
             message = "One letter only, please.\n" + prompt_string
         elif ((ord(character) not in range(65,91)) and (ord(character) not in range(97,123))):
-                message = "Only alphabetic characters, please.\n" + prompt_string
+            message = "Only alphabetic characters, please.\n" + prompt_string
         else:
             message = ""
     return character.upper()
     
 def word_from_wordlist(filename):
-	with open(filename,'r') as reader:
-		whole_text = reader.read()
-	words_list = whole_text.split()
-	index  = random.randint(0, len(words_list)-1)
-	return words_list[index].upper()
-	
+    with open(filename,'r') as reader:
+        whole_text = reader.read()
+    words_list = whole_text.split()
+    random_index  = random.randint(0, len(words_list)-1)
+    return words_list[random_index].upper()
+    
 # Specify the various responses
 msg = ["Had it already","Sorry, not in","Well done","You won!","You lost!"]
 # Number of wrong guesses allowed
 MAX_WRONG_GUESSES = 12
-	
+    
 # THE GAME STARTS HERE
 # Get a word
 target_word = word_from_wordlist("longwords.txt")
@@ -33,7 +33,7 @@ target_word = word_from_wordlist("longwords.txt")
 row_of_dashes = '_' *  len(target_word)
 wsf = list(row_of_dashes)
 # List of letters not in the target word
-fails = []
+fails: list = []
 
 msg_number = 0
 while (msg_number < 3):
