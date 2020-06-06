@@ -33,7 +33,7 @@ target_word = word_from_wordlist("longwords.txt")
 row_of_dashes = '_' *  len(target_word)
 wsf = list(row_of_dashes)
 # List of letters not in the target word
-fails: list = []
+fails = [] # type: list
 
 msg_number = 0
 while (msg_number < 3):
