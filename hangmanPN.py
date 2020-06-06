@@ -51,9 +51,7 @@ while (msg_number < 3):
         for index in range (0,len(target_word)):
             if target_word[index]==ch:
                 wsf[index]=ch
-                msg_number = 2
-        if ("".join(wsf)==target_word):
-            msg_number = 3
+        msg_number = 2 if ("".join(wsf)!=target_word) else 3
     print(msg[msg_number])
 print("The word was", target_word)
 print("END OF GAME")
