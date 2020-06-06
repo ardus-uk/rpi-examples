@@ -12,7 +12,7 @@ def players_char(prompt_string):
         if (len(character)!=1):
             message = "One letter only, please.\n" + prompt_string
         elif ((ord(character) not in range(65,91)) and (ord(character) not in range(97,123))):
-            message = "Ony alphabetic characters, please.\n" + prompt_string
+                message = "Ony alphabetic characters, please.\n" + prompt_string
         else:
             message = ""
     return character.upper()
@@ -38,7 +38,7 @@ wsf = list(row_of_dashes)
 # List of letters not in the target word
 fails = []
 
-msg_number = 0;
+msg_number = 0
 while (msg_number < 3):
     print(spaced_string(wsf))
     ch = players_char("Your choice of letter?: ")
@@ -46,15 +46,12 @@ while (msg_number < 3):
         msg_number = 0
     elif ch not in target_word:
         fails.append(ch)
-        if (len(fails) < MAX_WRONG_GUESSES):
-            msg_number = 1
-        else:
-            msg_number = 4
+        msg_number = 1 if (len(fails) < MAX_WRONG_GUESSES) else 4
     else:
         for index in range (0,len(target_word)):
             if target_word[index]==ch:
                 wsf[index]=ch
-        msg_number = 2
+                msg_number = 2
         if ("".join(wsf)==target_word):
             msg_number = 3
     print(msg[msg_number])
