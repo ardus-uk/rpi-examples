@@ -2,9 +2,6 @@
 
 import random
 
-def spaced_string(char_list):
-    return " ".join(char_list)
-
 def players_char(prompt_string):
     message = prompt_string
     while (message !=""):
@@ -40,7 +37,7 @@ fails = []
 
 msg_number = 0
 while (msg_number < 3):
-    print(spaced_string(wsf))
+    print(" ".join(wsf))
     ch = players_char("Your choice of letter?: ")
     if ((ch in fails) or (ch in wsf)):
         msg_number = 0
@@ -55,6 +52,3 @@ while (msg_number < 3):
     print(msg[msg_number])
 print("The word was", target_word)
 print("END OF GAME")
-
-                
-    
