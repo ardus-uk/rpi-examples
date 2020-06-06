@@ -8,7 +8,7 @@ words_list = whole_text.split()
 
 long_words = []
 for word in words_list:
-    if len(word) > 6:
+    if ((len(word) > 6) and ('-' not in word)):
         long_words.append(word)
 
 long_words_in_string = "\n".join(long_words)
