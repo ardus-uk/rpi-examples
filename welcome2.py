@@ -2,7 +2,8 @@
 
 import welcome
 
-memberlist = [  'Peter',
+memberlist = [  
+                'Peter',
                 'Mark',
                 'Liz',
                 'Dave',
