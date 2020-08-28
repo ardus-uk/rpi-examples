@@ -9,8 +9,7 @@ newlist = [
                 'John',
            ]
 
-#print(memberlist)
-#print(sorted(memberlist))
 
-welcome.greet(sorted(newlist))
-
+print("\nIn welcome3")
+print("-----------")
+welcome2.welcome.greet(newlist)
