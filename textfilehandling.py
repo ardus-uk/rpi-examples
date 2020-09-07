@@ -52,3 +52,27 @@ for word in words:
      if word == word[::-1]: palindromes.append(word)
 print("The list of palindromes, in alphabetical order, is ",sorted(palindromes))
 
+# Write a program to create a new text file which consists 
+# only of those words in the original file which contain 
+# any letter no more than once.
+
+outputfilename = "ex7.txt"
+with open(outputfilename,'w') as outputfile:
+     for word in words:
+          if sorted(list(word))==sorted(list(set(word))):
+               outputfile.write(word + '\n')
+print("File '"+outputfilename+"' now contains the words with no repeating letters")
+
+# Write a program to create a number of text files, 
+# named file<n>.txt where <n> is a whole number, 
+# and the contents of file<n>.txt are the words 
+# from the given file which have exactly <n> letters.
+
+for word in words:
+     outputfilename = 'file'+str(len(word))
+     with open(outputfilename,'a') as outputfile:
+          outputfile.write(word + '\n')
+
+
+
+
