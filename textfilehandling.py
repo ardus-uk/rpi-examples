@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-with open("longwords.txt") as givenfile:
+with open("nouns.txt") as givenfile:
      contents = givenfile.read()
 
 # Write a program to find out how many words there are.  
@@ -73,6 +73,20 @@ for word in words:
      with open(outputfilename,'a') as outputfile:
           outputfile.write(word + '\n')
 
+# Write a program to find all words in the file 
+# which are anagrams of other words in the file.
 
+anagrams = {}
+for word in words:
+     anagram_key = ''.join(sorted(word))
+     if anagram_key not in anagrams:
+          anagrams[anagram_key] = []
+     anagrams[anagram_key].append(word)
 
+for key, value in anagrams.items():
+     if len(value) > 1:
+          print(value)
 
+for word in words:
+     if word == "abbreviation":
+          print(word)
