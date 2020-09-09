@@ -83,10 +83,6 @@ for word in words:
           anagrams[anagram_key] = []
      anagrams[anagram_key].append(word)
 
-for key, value in anagrams.items():
-     if len(value) > 1:
-          print(value)
-
-for word in words:
-     if word == "abbreviation":
-          print(word)
+for anagram_key, anagrams_list in anagrams.items():
+     if len(anagrams_list) > 1:
+          print(anagrams_list)
