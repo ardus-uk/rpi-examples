@@ -69,7 +69,7 @@ print("File '"+outputfilename+"' now contains the words with no repeating letter
 # from the given file which have exactly <n> letters.
 
 for word in words:
-     outputfilename = 'file'+str(len(word))
+     outputfilename = 'file'+str(len(word))+'.txt'
      with open(outputfilename,'a') as outputfile:
           outputfile.write(word + '\n')
 
