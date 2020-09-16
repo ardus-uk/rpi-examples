@@ -5,7 +5,8 @@ def day_suffix(day):
         return "th"
     return ["st", "nd", "rd"][day % 10 - 1]
 
-
+def valid_daynumber(daynumber):
+    return 1 < daynumber < 366
 
 month_info = (
     ("January", 31),
@@ -37,10 +38,10 @@ days_of_week = (
 
 first_day_2021 = "Friday"
 
-day_number = 366
-while day_number > 365:
-    day_number = int(input("Enter day number in year > "))
-    if day_number > 365 or day_number < 1:
+day_number = 0
+while not valid_daynumber(day_number):
+    day_number = int(input("Enter day number in 2021 > "))
+    if not valid_daynumber(day_number):
         print("Day number must be between 1 and 365 inclusive.\nPlease try again...\n")
 
 cumul_days = 0
