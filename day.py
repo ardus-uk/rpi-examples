@@ -37,7 +37,7 @@ first_day_2021 = "Friday"
 
 while True:
     day_number = int(input("Enter day number in 2021 > "))
-    if 1 < daynumber < 366:
+    if 1 < day_number < 366:
         break
     else:
         print("Day number must be between 1 and 365 inclusive.\nPlease try again...")
